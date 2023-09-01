@@ -8,14 +8,59 @@
 import SwiftUI
 
 struct ContentView: View {
+    var seizurePercent = 12
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            
+            TabView() {
+                VStack {
+
+                    
+                }
+                .tabItem {
+                  Image(systemName: "circle")
+                  Text("Log")
+                }
+
+                
+                ZStack {
+                    VStack {
+                        Text("Hey!")
+                            .font(.largeTitle)
+                            .fontWeight(.semibold)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                        Text("Your patient has had " + String(seizurePercent) + "% less seizures this month!")
+                            .multilineTextAlignment(.trailing)
+                        Spacer()
+                        Text("Current state of patient: ")
+                            .font(.title)
+                            .multilineTextAlignment(.center)
+                        
+                        Spacer()
+                    }
+                }
+                .tabItem {
+                  Image(systemName: "square")
+                  Text("Home")
+                }
+                
+                .tabItem {
+                    Image(systemName: "pencil")
+                }
+                
+                VStack {
+                    Text("adfjbasdkfnaslkdjfnalkjsdnf.")
+                }
+                .tabItem {
+                    Image(systemName: "triangle")
+                    Text("Relax")
+                }
+                
+                
+                
+            }
         }
-        .padding()
     }
 }
 
@@ -24,3 +69,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
