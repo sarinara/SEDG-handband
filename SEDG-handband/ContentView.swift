@@ -15,7 +15,6 @@ struct ContentView: View {
             TabView() {
                 VStack {
 
-                    
                 }
                 .tabItem {
                   Image(systemName: "circle")
@@ -24,12 +23,21 @@ struct ContentView: View {
 
                 
                 ZStack {
+                    GeometryReader { geo in
+                        Image("homeScreenBG")
+                            .resizable()
+                            .frame(width: geo.size.width, height:600)
+                            
+                    }.ignoresSafeArea(.all, edges: [.top, .leading, .trailing])
                     VStack {
+                        
                         Text("Hey!")
                             .font(.largeTitle)
                             .fontWeight(.semibold)
                             .multilineTextAlignment(.leading)
                         Spacer()
+                        
+
                         Text("Your patient has had " + String(seizurePercent) + "% less seizures this month!")
                             .multilineTextAlignment(.trailing)
                         Spacer()
